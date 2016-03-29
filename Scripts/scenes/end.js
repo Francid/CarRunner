@@ -26,6 +26,9 @@ var scenes;
             // Add Label to the Menu Button
             this._menuLabel = new objects.Label("MENU", "20px Consolas Bold", "#FFFFFF", config.Screen.CENTER_X + 170, config.Screen.CENTER_Y + 170, true);
             this.addChild(this._menuLabel);
+            //Add High Score Label
+            this._highScoreLabel = new objects.Label("Highest Score: " + play.scores, "40px Consolas Bold", "#CD0000", config.Screen.CENTER_X, config.Screen.CENTER_Y + 50, true);
+            this.addChild(this._highScoreLabel);
             // add this scene to the global stage container
             stage.addChild(this);
         };

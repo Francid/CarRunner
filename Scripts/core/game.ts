@@ -17,7 +17,9 @@ var guide: scenes.Guide;
 
 var assetData: objects.Asset[] = [
     // Add your Assets here
+    { id: "menuSceneMusic", src: "../../Assets/audio/menuSceneMusic.mp3" },
     { id: "playSceneMusic", src: "../../Assets/audio/playSceneMusic.mp3" },
+    { id: "endSceneMusic", src: "../../Assets/audio/endSceneMusic.mp3" },
     { id: "hit", src: "../../Assets/audio/hit.mp3" },
     { id: "StartButton", src: "../../Assets/images/StartButton.png" },
     { id: "RestartButton", src: "../../Assets/images/RestartButton.png" },
@@ -96,6 +98,8 @@ function changeScene(): void {
             stage.removeAllChildren();
             menu = new scenes.Menu();
             currentScene = menu;
+            createjs.Sound.stop();
+            createjs.Sound.play("menuSceneMusic", {loop:20});
             console.log("Starting MENU Scene");
             break;
         case config.Scene.PLAY:
@@ -103,6 +107,8 @@ function changeScene(): void {
             stage.removeAllChildren();
             play = new scenes.Play();
             currentScene = play;
+            createjs.Sound.stop();
+            createjs.Sound.play("playSceneMusic",{loop:20});
             console.log("Starting PLAY Scene");
             break;
         case config.Scene.END:
@@ -110,6 +116,8 @@ function changeScene(): void {
             stage.removeAllChildren();
             end = new scenes.End();
             currentScene = end;
+            createjs.Sound.stop();
+            createjs.Sound.play("endSceneMusic", {loop:20});
             console.log("Starting END Scene");
             break;
         case config.Scene.GUIDE:

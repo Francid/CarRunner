@@ -12,7 +12,7 @@ module scenes {
         // private _lives: managers.GameController;
         private _lives: number;
 
-        public _scores: number;
+        public scores: number;
 
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -26,10 +26,10 @@ module scenes {
         public start(): void {
 
             this._lives = 10;
-            this._scores = 0;
+            this.scores = 0;
 
             //Set car count
-            this._carCount = 3;
+            this._carCount = 6;
 
             //Instantiate the island
             this._car = new Array<objects.Car>();
@@ -54,13 +54,12 @@ module scenes {
             this.addChild(this._livesText);
             
             //Add ScoreLabel to the Play Scene
-            this._scoreText = new objects.Label("Score: " + this._scores.toString(), "40px Consolas Bold", "#CD0000", 460, 10, false);
+            this._scoreText = new objects.Label("Score: " + this.scores.toString(), "40px Consolas Bold", "#CD0000", 460, 10, false);
             this.addChild(this._scoreText);
 
             // added collision manager to the scene
             this._collision = new managers.Collision(this._player);
             
-            createjs.Sound.play("playSceneMusic");
 
             // add this scene to the global stage container
             stage.addChild(this);
@@ -80,7 +79,7 @@ module scenes {
                 }
             });
 
-            this._scoreText.text = "Score: " + this._scores.toString();
+            this._scoreText.text = "Score: " + this.scores.toString();
             
             if(this._lives <= 0){
                 this._endScene();
@@ -91,7 +90,6 @@ module scenes {
             //Switch to End Scene
             scene = config.Scene.END;
             changeScene();
-            createjs.Sound.stop();
         }
 
     }

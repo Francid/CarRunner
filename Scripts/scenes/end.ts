@@ -5,6 +5,7 @@ module scenes {
         private _menuLabel: objects.Label;
         private _restartButton: objects.Button;
         private _gameOverImage: createjs.Bitmap;
+        private _highScoreLabel: objects.Label;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -40,6 +41,14 @@ module scenes {
                 config.Screen.CENTER_Y + 170, true);
             this.addChild(this._menuLabel);
             
+            //Add High Score Label
+            this._highScoreLabel = new objects.Label(
+                "Highest Score: "+ play.scores, 
+                "40px Consolas Bold", 
+                "#CD0000", 
+                config.Screen.CENTER_X, 
+                config.Screen.CENTER_Y + 50, true);
+            this.addChild(this._highScoreLabel);
             // add this scene to the global stage container
             stage.addChild(this);
         }
