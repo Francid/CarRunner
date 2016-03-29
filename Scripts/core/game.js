@@ -16,7 +16,7 @@ var assetData = [
     { id: "RestartButton", src: "../../Assets/images/RestartButton.png" },
     { id: "BackButton", src: "../../Assets/images/BackButton.png" },
     { id: "road", src: "../../Assets/images/road.png" },
-    { id: "plane", src: "../../Assets/images/plane.png" },
+    { id: "player", src: "../../Assets/images/player.png" },
     { id: "car", src: "../../Assets/images/car.png" }
 ];
 function preload() {
