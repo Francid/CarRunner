@@ -33,7 +33,7 @@ var objects;
         };
         // reset the car offscreen
         Car.prototype._reset = function (value) {
-            this.x = value;
+            this.x = Math.floor(Math.random() * this._rightBounds) + this._rightBounds + 20;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++

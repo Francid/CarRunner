@@ -23,7 +23,6 @@ module objects {
         protected _checkBounds(value:number):void {
             // check to see if the top of the road 
             // is met the top of the scene
-            
             if(this.x <= value) {
                 this._reset(0);
             }
@@ -39,7 +38,7 @@ module objects {
         public update():void {
             // scroll the ocean 5 px per frame
             this.x -= this._speed.x;
-            this._checkBounds(-800);
+            this._checkBounds(-959);
         }
     }
 }

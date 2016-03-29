@@ -39,7 +39,7 @@ var objects;
         Road.prototype.update = function () {
             // scroll the ocean 5 px per frame
             this.x -= this._speed.x;
-            this._checkBounds(-800);
+            this._checkBounds(-959);
         };
         return Road;
     }(objects.GameObject));

@@ -3,9 +3,9 @@ module scenes {
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _road: objects.Road;
-        private _island: objects.Island[];
-        private _cloud: objects.Cloud;
-        private _islandCount:number;
+        private _car: objects.Car[];
+        private _player: objects.Player;
+        private _carCount:number;
 
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -18,25 +18,26 @@ module scenes {
         // Start Method
         public start(): void {
             
-            //Set Island count
-            this._islandCount = 3;
+            //Set car count
+            this._carCount = 3;
             
             //Instantiate the island
-            this._island = new Array<objects.Island>();
+            this._car = new Array<objects.Car>();
             
-            // added ocean to the scene
+            // added road to the scene
             this._road = new objects.Road();
             this.addChild(this._road);
+            
+            // added player to the scene
+            this._player = new objects.Player();
+            this.addChild(this._player);
 
-            // added island to the scene
-            for (var island: number = 0; island < this._islandCount; island++) {
-                this._island[island] = new objects.Island();
-                this.addChild(this._island[island]);
+            // added car to the scene
+            for (var car: number = 0; car < this._carCount; car++) {
+                this._car[car] = new objects.Car();
+                this.addChild(this._car[car]);
             }
             
-            //added cloud to the scene
-            this._cloud = new objects.Cloud();
-            this.addChild(this._cloud);
 
             // add this scene to the global stage container
             stage.addChild(this);
@@ -45,10 +46,10 @@ module scenes {
         // PLAY Scene updates here
         public update(): void {
             this._road.update();
-            this._island.forEach(island => {
-               island.update(); 
+            this._player.update();
+            this._car.forEach(car => {
+               car.update(); 
             });
-            this._cloud.update();
         }
 
 

@@ -31,7 +31,7 @@ module objects {
         
         // reset the car offscreen
         protected _reset(value:number):void {          
-            this.x = value;
+            this.x = Math.floor(Math.random() * this._rightBounds) + this._rightBounds + 20;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         }
         

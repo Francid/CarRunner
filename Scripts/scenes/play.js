@@ -15,31 +15,31 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Play.prototype.start = function () {
-            //Set Island count
-            this._islandCount = 3;
+            //Set car count
+            this._carCount = 3;
             //Instantiate the island
-            this._island = new Array();
-            // added ocean to the scene
+            this._car = new Array();
+            // added road to the scene
             this._road = new objects.Road();
             this.addChild(this._road);
-            // added island to the scene
-            for (var island = 0; island < this._islandCount; island++) {
-                this._island[island] = new objects.Island();
-                this.addChild(this._island[island]);
+            // added player to the scene
+            this._player = new objects.Player();
+            this.addChild(this._player);
+            // added car to the scene
+            for (var car = 0; car < this._carCount; car++) {
+                this._car[car] = new objects.Car();
+                this.addChild(this._car[car]);
             }
-            //added cloud to the scene
-            this._cloud = new objects.Cloud();
-            this.addChild(this._cloud);
             // add this scene to the global stage container
             stage.addChild(this);
         };
         // PLAY Scene updates here
         Play.prototype.update = function () {
             this._road.update();
-            this._island.forEach(function (island) {
-                island.update();
+            this._player.update();
+            this._car.forEach(function (car) {
+                car.update();
             });
-            this._cloud.update();
         };
         return Play;
     }(objects.Scene));
