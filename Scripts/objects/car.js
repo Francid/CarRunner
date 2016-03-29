@@ -20,6 +20,7 @@ var objects;
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
         function Car() {
             _super.call(this, "car");
+            this.name = "car";
             this._speed.x = 5; //car speed
             this._reset(this._rightBounds);
         }
@@ -28,6 +29,7 @@ var objects;
             // check to see if the top of the car 
             // is outside the viewport         
             if (this.x <= value) {
+                play._scores += 5;
                 this._reset(this._rightBounds);
             }
         };

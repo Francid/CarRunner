@@ -8,6 +8,8 @@
 /// <reference path="../objects/car.ts"/>
 /// <reference path="../objects/road.ts"/>
 /// <reference path="../objects/player.ts"/>
+/// <reference path="../managers/collision.ts"/>
+/// <reference path="../managers/gameController.ts"/>
 /// <reference path="../scenes/end.ts" />
 /// <reference path="../scenes/play.ts" />
 /// <reference path="../scenes/menu.ts" /> 
