@@ -23,7 +23,9 @@ var assetData: objects.Asset[] = [
     { id: "road", src: "../../Assets/images/road.png" },
     { id: "player", src: "../../Assets/images/player.png" },
     { id: "car", src: "../../Assets/images/car.png" },
-    { id: "GuideButton", src: "../../Assets/images/GuideButton.png" }
+    { id: "GuideButton", src: "../../Assets/images/GuideButton.png" },
+    { id: "MenuBkg", src: "../../Assets/images/MenuBkg.png" },
+    { id: "EndBkg", src: "../../Assets/images/EndBkg.png" }
 ];
 
 function preload() {

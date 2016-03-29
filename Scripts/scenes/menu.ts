@@ -2,9 +2,9 @@
 module scenes {
     export class Menu extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _menuLabel: objects.Label;
         private _startButton: objects.Button;
         private _guideButton: objects.Button;
+        private _menuImage: createjs.Bitmap;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -15,18 +15,15 @@ module scenes {
         
         // Start Method
         public start(): void {
-            //Add Menu Label
-            this._menuLabel = new objects.Label(
-                "MENU SCENE", "60px Consolas",
-                "#000000",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
-            this.addChild(this._menuLabel);
             
+            //Add Background Image
+            this._menuImage = new createjs.Bitmap(assets.getResult("MenuBkg"));
+            this.addChild(this._menuImage);            
             
             // add the Start button to the MENU scene
             this._startButton = new objects.Button(
                 "StartButton",
-                config.Screen.CENTER_X - 180,
+                config.Screen.CENTER_X - 100,
                 config.Screen.CENTER_Y + 100, true);
             this.addChild(this._startButton);
             
@@ -36,7 +33,7 @@ module scenes {
             // Add Guide Button to the Menu Scene
             this._guideButton = new objects.Button(
                 "GuideButton",
-                config.Screen.CENTER_X + 180,
+                config.Screen.CENTER_X + 100,
                 config.Screen.CENTER_Y + 100, true);
             this.addChild(this._guideButton);
             

@@ -50,11 +50,11 @@ module scenes {
 
             //this._lives = new managers.GameController();
             //Add Lives Label to the Play Scene
-            this._livesText = new objects.Label("Lives: " + this._lives.toString(), "12px Consolas", "#FFFFFF", 10, 10, false);
+            this._livesText = new objects.Label("Lives: " + this._lives.toString(), "40px Consolas Bold", "#CD0000", 10, 10, false);
             this.addChild(this._livesText);
             
             //Add ScoreLabel to the Play Scene
-            this._scoreText = new objects.Label("Score: " + this._scores.toString(), "12px Consolas", "#FFFFFF", 550, 10, false);
+            this._scoreText = new objects.Label("Score: " + this._scores.toString(), "40px Consolas Bold", "#CD0000", 460, 10, false);
             this.addChild(this._scoreText);
 
             // added collision manager to the scene
