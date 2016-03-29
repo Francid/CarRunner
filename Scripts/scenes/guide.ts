@@ -2,8 +2,8 @@
 module scenes {
     export class Guide extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _menuLabel: objects.Label;
-        private _startButton: objects.Button;
+        private _backButton: objects.Button;
+        private _backLabel: objects.Label;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -13,25 +13,26 @@ module scenes {
         // PUBLIC METHODS +++++++++++++++++++++
         
         // Start Method
-        public start(): void {
-            //Add Menu Label
-            this._menuLabel = new objects.Label(
-                "MENU SCENE", "60px Consolas",
-                "#000000",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
-            this.addChild(this._menuLabel);
-            
+        public start(): void {            
             
             // add the Start button to the MENU scene
-            this._startButton = new objects.Button(
+            this._backButton = new objects.Button(
                 "BackButton",
                 config.Screen.CENTER_X + 200,
-                config.Screen.CENTER_Y + 180, true);
-            this.addChild(this._startButton);
+                config.Screen.CENTER_Y + 150, true);
+            this.addChild(this._backButton);
             
             // Start Button event listener
-            this._startButton.on("click", this._startButtonClick, this);
+            this._backButton.on("click", this._backButtonClick, this);
             
+            // Add Label to the Back Button
+            this._backLabel = new objects.Label(
+                "MENU", 
+                "20px Consolas Bold", 
+                "#CD0000", 
+                config.Screen.CENTER_X + 170, 
+                config.Screen.CENTER_Y + 180, true);
+            this.addChild(this._backLabel);
             
             // add this scene to the global stage container
             stage.addChild(this);
@@ -46,7 +47,7 @@ module scenes {
         //EVENT HANDLERS ++++++++++++++++++++
         
         // LEFT_CAVE Button click event handler
-        private _startButtonClick(event: createjs.MouseEvent) {
+        private _backButtonClick(event: createjs.MouseEvent) {
             // Switch to the LEFT_CAVE Scene
             scene = config.Scene.MENU;
             changeScene();

@@ -2,7 +2,7 @@
 module scenes {
     export class End extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _endLabel: objects.Label;
+        private _menuLabel: objects.Label;
         private _restartButton: objects.Button;
         private _gameOverImage: createjs.Bitmap;
         
@@ -25,13 +25,21 @@ module scenes {
             this._restartButton = new objects.Button(
                 "RestartButton",
                 config.Screen.CENTER_X + 200,
-                config.Screen.CENTER_Y + 180, true);
+                config.Screen.CENTER_Y + 140, true);
             this.addChild(this._restartButton);
            
             // START_OVER Button event listener
             this._restartButton.on("click", this._restartButtonClick, this);
-
-
+            
+            // Add Label to the Menu Button
+            this._menuLabel = new objects.Label(
+                "MENU", 
+                "20px Consolas Bold", 
+                "#FFFFFF", 
+                config.Screen.CENTER_X + 170, 
+                config.Screen.CENTER_Y + 170, true);
+            this.addChild(this._menuLabel);
+            
             // add this scene to the global stage container
             stage.addChild(this);
         }

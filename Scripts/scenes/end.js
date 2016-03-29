@@ -19,10 +19,13 @@ var scenes;
             this._gameOverImage = new createjs.Bitmap(assets.getResult("EndBkg"));
             this.addChild(this._gameOverImage);
             // add the BACK button to the OVER scene
-            this._restartButton = new objects.Button("RestartButton", config.Screen.CENTER_X + 200, config.Screen.CENTER_Y + 180, true);
+            this._restartButton = new objects.Button("RestartButton", config.Screen.CENTER_X + 200, config.Screen.CENTER_Y + 140, true);
             this.addChild(this._restartButton);
             // START_OVER Button event listener
             this._restartButton.on("click", this._restartButtonClick, this);
+            // Add Label to the Menu Button
+            this._menuLabel = new objects.Label("MENU", "20px Consolas Bold", "#FFFFFF", config.Screen.CENTER_X + 170, config.Screen.CENTER_Y + 170, true);
+            this.addChild(this._menuLabel);
             // add this scene to the global stage container
             stage.addChild(this);
         };

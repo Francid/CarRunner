@@ -59,6 +59,8 @@ module scenes {
 
             // added collision manager to the scene
             this._collision = new managers.Collision(this._player);
+            
+            createjs.Sound.play("playSceneMusic");
 
             // add this scene to the global stage container
             stage.addChild(this);
@@ -74,6 +76,7 @@ module scenes {
                     car._reset(0);
                     this._lives -= 1;
                     this._livesText.text = "Lives: " + this._lives.toString();
+                    createjs.Sound.play("hit");
                 }
             });
 
@@ -88,6 +91,7 @@ module scenes {
             //Switch to End Scene
             scene = config.Scene.END;
             changeScene();
+            createjs.Sound.stop();
         }
 
     }

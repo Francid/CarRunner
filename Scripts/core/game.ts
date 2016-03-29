@@ -17,6 +17,8 @@ var guide: scenes.Guide;
 
 var assetData: objects.Asset[] = [
     // Add your Assets here
+    { id: "playSceneMusic", src: "../../Assets/audio/playSceneMusic.mp3" },
+    { id: "hit", src: "../../Assets/audio/hit.mp3" },
     { id: "StartButton", src: "../../Assets/images/StartButton.png" },
     { id: "RestartButton", src: "../../Assets/images/RestartButton.png" },
     { id: "BackButton", src: "../../Assets/images/BackButton.png" },

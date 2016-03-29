@@ -41,6 +41,7 @@ var scenes;
             this.addChild(this._scoreText);
             // added collision manager to the scene
             this._collision = new managers.Collision(this._player);
+            createjs.Sound.play("playSceneMusic");
             // add this scene to the global stage container
             stage.addChild(this);
         };
@@ -55,6 +56,7 @@ var scenes;
                     car._reset(0);
                     _this._lives -= 1;
                     _this._livesText.text = "Lives: " + _this._lives.toString();
+                    createjs.Sound.play("hit");
                 }
             });
             this._scoreText.text = "Score: " + this._scores.toString();
@@ -66,6 +68,7 @@ var scenes;
             //Switch to End Scene
             scene = config.Scene.END;
             changeScene();
+            createjs.Sound.stop();
         };
         return Play;
     }(objects.Scene));

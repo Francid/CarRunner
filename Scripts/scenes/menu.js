@@ -28,6 +28,12 @@ var scenes;
             this.addChild(this._guideButton);
             //Guide Button event listener
             this._guideButton.on("click", this._guideButtonClick, this);
+            // Add Label to the StartButton
+            this._raceLabel = new objects.Label("RACE", "20px Consolas Bold", "#CD0000", config.Screen.CENTER_X - 90, config.Screen.CENTER_Y + 130, true);
+            this.addChild(this._raceLabel);
+            // Add Label to the StartButton
+            this._guideLabel = new objects.Label("INSTRUCTION", "20px Consolas", "#CD0000", config.Screen.CENTER_X + 90, config.Screen.CENTER_Y + 130, true);
+            this.addChild(this._guideLabel);
             // add this scene to the global stage container
             stage.addChild(this);
         };
