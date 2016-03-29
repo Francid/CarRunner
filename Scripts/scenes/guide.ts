@@ -1,10 +1,9 @@
-﻿// MENU SCENE
+// GUIDE SCENE
 module scenes {
-    export class Menu extends objects.Scene {
+    export class Guide extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _menuLabel: objects.Label;
         private _startButton: objects.Button;
-        private _guideButton: objects.Button;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -26,28 +25,19 @@ module scenes {
             // add the Start button to the MENU scene
             this._startButton = new objects.Button(
                 "StartButton",
-                config.Screen.CENTER_X - 180,
-                config.Screen.CENTER_Y + 100, true);
+                config.Screen.CENTER_X,
+                config.Screen.CENTER_Y + 180, true);
             this.addChild(this._startButton);
             
             // Start Button event listener
             this._startButton.on("click", this._startButtonClick, this);
             
-            // Add Guide Button to the Menu Scene
-            this._guideButton = new objects.Button(
-                "GuideButton",
-                config.Screen.CENTER_X + 180,
-                config.Screen.CENTER_Y + 100, true);
-            this.addChild(this._guideButton);
-            
-            //Guide Button event listener
-            this._guideButton.on("click", this._guideButtonClick, this);
             
             // add this scene to the global stage container
             stage.addChild(this);
         }
 
-        // MENU Scene updates here
+        // INTRO Scene updates here
         public update(): void {
 
         }
@@ -55,17 +45,10 @@ module scenes {
         
         //EVENT HANDLERS ++++++++++++++++++++
         
-        // StartButton click event handler
+        // LEFT_CAVE Button click event handler
         private _startButtonClick(event: createjs.MouseEvent) {
             // Switch to the LEFT_CAVE Scene
-            scene = config.Scene.PLAY;
-            changeScene();
-        }
-        
-        // StartButton click event handler
-        private _guideButtonClick(event: createjs.MouseEvent) {
-            // Switch to the LEFT_CAVE Scene
-            scene = config.Scene.GUIDE;
+            scene = config.Scene.MENU;
             changeScene();
         }
 

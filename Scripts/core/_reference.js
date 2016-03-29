@@ -12,5 +12,6 @@
 /// <reference path="../managers/gameController.ts"/>
 /// <reference path="../scenes/end.ts" />
 /// <reference path="../scenes/play.ts" />
-/// <reference path="../scenes/menu.ts" /> 
+/// <reference path="../scenes/menu.ts" />
+/// <reference path="../scenes/guide.ts" /> 
 //# sourceMappingURL=_reference.js.map

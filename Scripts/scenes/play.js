@@ -15,7 +15,7 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Play.prototype.start = function () {
-            this._lives = 40;
+            this._lives = 10;
             this._scores = 0;
             //Set car count
             this._carCount = 3;
@@ -56,6 +56,14 @@ var scenes;
                 }
             });
             this._scoreText.text = "Score: " + this._scores.toString();
+            if (this._lives <= 0) {
+                this._endScene();
+            }
+        };
+        Play.prototype._endScene = function () {
+            //Switch to End Scene
+            scene = config.Scene.END;
+            changeScene();
         };
         return Play;
     }(objects.Scene));

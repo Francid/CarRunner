@@ -10,6 +10,7 @@ var scene;
 var menu;
 var play;
 var end;
+var guide;
 var assetData = [
     // Add your Assets here
     { id: "StartButton", src: "../../Assets/images/StartButton.png" },
@@ -17,7 +18,8 @@ var assetData = [
     { id: "BackButton", src: "../../Assets/images/BackButton.png" },
     { id: "road", src: "../../Assets/images/road.png" },
     { id: "player", src: "../../Assets/images/player.png" },
-    { id: "car", src: "../../Assets/images/car.png" }
+    { id: "car", src: "../../Assets/images/car.png" },
+    { id: "GuideButton", src: "../../Assets/images/GuideButton.png" }
 ];
 function preload() {
     assets = new createjs.LoadQueue();
@@ -86,6 +88,13 @@ function changeScene() {
             end = new scenes.End();
             currentScene = end;
             console.log("Starting END Scene");
+            break;
+        case config.Scene.GUIDE:
+            // show the GUIDE scene
+            stage.removeAllChildren();
+            guide = new scenes.Guide();
+            currentScene = guide;
+            console.log("Starting Guide Scene");
             break;
     }
     console.log(currentScene.numChildren);

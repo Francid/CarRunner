@@ -25,7 +25,7 @@ module scenes {
         // Start Method
         public start(): void {
 
-            this._lives = 40;
+            this._lives = 10;
             this._scores = 0;
 
             //Set car count
@@ -49,10 +49,11 @@ module scenes {
             }
 
             //this._lives = new managers.GameController();
-
+            //Add Lives Label to the Play Scene
             this._livesText = new objects.Label("Lives: " + this._lives.toString(), "12px Consolas", "#FFFFFF", 10, 10, false);
             this.addChild(this._livesText);
-
+            
+            //Add ScoreLabel to the Play Scene
             this._scoreText = new objects.Label("Score: " + this._scores.toString(), "12px Consolas", "#FFFFFF", 550, 10, false);
             this.addChild(this._scoreText);
 
@@ -77,10 +78,17 @@ module scenes {
             });
 
             this._scoreText.text = "Score: " + this._scores.toString();
+            
+            if(this._lives <= 0){
+                this._endScene();
+            }
         }
-
-
-        //EVENT HANDLERS ++++++++++++++++++++
+        
+        private _endScene():void{
+            //Switch to End Scene
+            scene = config.Scene.END;
+            changeScene();
+        }
 
     }
 }

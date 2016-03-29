@@ -13,15 +13,17 @@ var scene: number;
 var menu: scenes.Menu;
 var play: scenes.Play;
 var end: scenes.End;
+var guide: scenes.Guide;
 
-var assetData:objects.Asset[] = [
+var assetData: objects.Asset[] = [
     // Add your Assets here
-    {id: "StartButton", src:"../../Assets/images/StartButton.png"},
-    {id: "RestartButton", src:"../../Assets/images/RestartButton.png"},
-    {id: "BackButton", src:"../../Assets/images/BackButton.png"},
-    {id: "road", src:"../../Assets/images/road.png"},
-    {id: "player", src:"../../Assets/images/player.png"},
-    {id: "car", src:"../../Assets/images/car.png"}
+    { id: "StartButton", src: "../../Assets/images/StartButton.png" },
+    { id: "RestartButton", src: "../../Assets/images/RestartButton.png" },
+    { id: "BackButton", src: "../../Assets/images/BackButton.png" },
+    { id: "road", src: "../../Assets/images/road.png" },
+    { id: "player", src: "../../Assets/images/player.png" },
+    { id: "car", src: "../../Assets/images/car.png" },
+    { id: "GuideButton", src: "../../Assets/images/GuideButton.png" }
 ];
 
 function preload() {
@@ -34,22 +36,22 @@ function preload() {
 function init(): void {
     // create a reference the HTML canvas Element
     canvas = document.getElementById("canvas");
-    
+
     // create our main display list container
     stage = new createjs.Stage(canvas);
-    
+
     // Enable mouse events
     stage.enableMouseOver(20);
-    
+
     // set the framerate to 60 frames per second
     createjs.Ticker.setFPS(config.Game.FPS);
-    
+
     // create an event listener to count off frames
     createjs.Ticker.on("tick", gameLoop, this);
-    
+
     // sets up our stats counting workflow
-    setupStats(); 
-    
+    setupStats();
+
     // set initial scene
     scene = config.Scene.MENU;
     changeScene();
@@ -58,14 +60,14 @@ function init(): void {
 // Main Game Loop function that handles what happens each "tick" or frame
 function gameLoop(event: createjs.Event): void {
     // start collecting stats for this frame
-    stats.begin(); 
-    
+    stats.begin();
+
     // calling State's update method
-    currentScene.update(); 
-    
+    currentScene.update();
+
     // redraw/refresh stage every frame
     stage.update();
-    
+
     // stop collecting stats for this frame
     stats.end();
 }
@@ -82,7 +84,7 @@ function setupStats(): void {
 
 // Finite State Machine used to change Scenes
 function changeScene(): void {
-    
+
     // Launch various scenes
     switch (scene) {
         case config.Scene.MENU:
@@ -105,6 +107,13 @@ function changeScene(): void {
             end = new scenes.End();
             currentScene = end;
             console.log("Starting END Scene");
+            break;
+        case config.Scene.GUIDE:
+            // show the GUIDE scene
+            stage.removeAllChildren();
+            guide = new scenes.Guide();
+            currentScene = guide;
+            console.log("Starting Guide Scene");
             break;
     }
 
