@@ -1,7 +1,13 @@
+/**
+ * Program: Web Gammming @ Centennial College
+ * Source file: GameController.ts
+ * Author: Francis Ofougwuka
+ * Date modified: 29/03/2016
+ * Last modified by: Francis Ofougwuka
+ * Revison history: 
+ */
 module managers {
-    /**
-    * name
-    */
+    //GameController Class
     export class GameController {
 
         //PRIVATE INSTANCE VARIABLE

@@ -1,5 +1,15 @@
-// PLAY SCENE
+/**
+ * Program: Web Gammming @ Centennial College
+ * Source file: menu.ts
+ * Author: Francis Ofougwuka
+ * Date modified: 29/03/2016
+ * Last modified by: Francis Ofougwuka
+ * Revison history: 
+ */
+
+
 module scenes {
+    // PLAY SCENE CLASS
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _road: objects.Road;

@@ -1,6 +1,6 @@
 /**
  * Program: Web Gammming @ Centennial College
- * Source file: Road.ts
+ * Source file: Car.ts
  * Author: Francis Ofougwuka
  * Date modified:
  * Last modified by: Francis Ofougwuka

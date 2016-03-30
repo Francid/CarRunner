@@ -1,3 +1,11 @@
+/**
+ * Program: Web Gammming @ Centennial College
+ * Source file: Player.ts
+ * Author: Francis Ofougwuka
+ * Date modified:
+ * Last modified by: Francis Ofougwuka
+ * Revison history: 
+ */
 module objects {
     // PLAYER CLASS ++++++++++++++++++++++++++++++
     export class Player extends createjs.Bitmap {

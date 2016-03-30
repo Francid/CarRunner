@@ -1,5 +1,15 @@
-// LEFT_CAVE SCENE
+/**
+ * Program: Web Gammming @ Centennial College
+ * Source file: end.ts
+ * Author: Francis Ofougwuka
+ * Date modified: 29/03/2016
+ * Last modified by: Francis Ofougwuka
+ * Revison history: 
+ */
+
+
 module scenes {
+    // End SCENE CLASS
     export class End extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _menuLabel: objects.Label;

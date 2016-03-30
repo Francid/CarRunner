@@ -1,5 +1,15 @@
-// GUIDE SCENE
+/**
+ * Program: Web Gammming @ Centennial College
+ * Source file: end.ts
+ * Author: Francis Ofougwuka
+ * Date modified: 29/03/2016
+ * Last modified by: Francis Ofougwuka
+ * Revison history: 
+ */
+
+
 module scenes {
+    // GUIDE SCENE CLASS
     export class Guide extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _backButton: objects.Button;
@@ -46,7 +56,7 @@ module scenes {
         
         //EVENT HANDLERS ++++++++++++++++++++
         
-        // LEFT_CAVE Button click event handler
+        // Back Button click event handler
         private _backButtonClick(event: createjs.MouseEvent) {
             // Switch to the LEFT_CAVE Scene
             scene = config.Scene.MENU;

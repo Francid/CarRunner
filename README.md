@@ -1,3 +1,3 @@
-# COMP397-W2016-MailPilotDemo Project
+# WEB GAMING ASSIGNMENT 
 
-COMP397-W2016-MailPilotDemo Project for Web Game Programming @ Centennial
+CARRUNNER GAME
