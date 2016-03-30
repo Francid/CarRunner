@@ -14,6 +14,7 @@ module scenes {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _backButton: objects.Button;
         private _backLabel: objects.Label;
+        private _guideImage: createjs.Bitmap;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -23,7 +24,11 @@ module scenes {
         // PUBLIC METHODS +++++++++++++++++++++
         
         // Start Method
-        public start(): void {            
+        public start(): void {
+            
+            // Add Background Image to the Guide Scene
+            this._guideImage = new createjs.Bitmap(assets.getResult("GuideBkg"));
+            this.addChild(this._guideImage);        
             
             // add the Start button to the MENU scene
             this._backButton = new objects.Button(

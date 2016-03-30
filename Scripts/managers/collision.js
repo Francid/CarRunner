@@ -1,3 +1,11 @@
+/**
+ * Program: Web Gammming @ Centennial College
+ * Source file: Collision.ts
+ * Author: Francis Ofougwuka
+ * Date modified: 29/03/2016
+ * Last modified by: Francis Ofougwuka
+ * Revison history:
+ */
 var managers;
 (function (managers) {
     // COLLISION MANAGER CLASS

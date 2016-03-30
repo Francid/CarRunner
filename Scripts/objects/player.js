@@ -3,6 +3,14 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
+/**
+ * Program: Web Gammming @ Centennial College
+ * Source file: Player.ts
+ * Author: Francis Ofougwuka
+ * Date modified:
+ * Last modified by: Francis Ofougwuka
+ * Revison history:
+ */
 var objects;
 (function (objects) {
     // PLAYER CLASS ++++++++++++++++++++++++++++++

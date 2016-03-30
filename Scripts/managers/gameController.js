@@ -1,8 +1,14 @@
+/**
+ * Program: Web Gammming @ Centennial College
+ * Source file: GameController.ts
+ * Author: Francis Ofougwuka
+ * Date modified: 29/03/2016
+ * Last modified by: Francis Ofougwuka
+ * Revison history:
+ */
 var managers;
 (function (managers) {
-    /**
-    * name
-    */
+    //GameController Class
     var GameController = (function () {
         function GameController() {
             this._livesValue = 10;

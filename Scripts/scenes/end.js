@@ -1,11 +1,19 @@
+/**
+ * Program: Web Gammming @ Centennial College
+ * Source file: end.ts
+ * Author: Francis Ofougwuka
+ * Date modified: 29/03/2016
+ * Last modified by: Francis Ofougwuka
+ * Revison history:
+ */
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-// LEFT_CAVE SCENE
 var scenes;
 (function (scenes) {
+    // End SCENE CLASS
     var End = (function (_super) {
         __extends(End, _super);
         // CONSTRUCTOR ++++++++++++++++++++++

@@ -26,7 +26,7 @@ module objects {
             // check to see if the top of the car 
             // is outside the viewport         
             if (this.x <= value) {
-                play.scores +=5;
+                play.scores +=2;
                 this._reset(this._rightBounds);
             }
         }

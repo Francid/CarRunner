@@ -25,6 +25,7 @@ var assetData = [
     { id: "car", src: "../../Assets/images/car.png" },
     { id: "GuideButton", src: "../../Assets/images/GuideButton.png" },
     { id: "MenuBkg", src: "../../Assets/images/MenuBkg.png" },
+    { id: "GuideBkg", src: "../../Assets/images/GuideBkg.jpg" },
     { id: "EndBkg", src: "../../Assets/images/EndBkg.png" }
 ];
 function preload() {

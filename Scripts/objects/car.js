@@ -1,6 +1,6 @@
 /**
  * Program: Web Gammming @ Centennial College
- * Source file: Road.ts
+ * Source file: Car.ts
  * Author: Francis Ofougwuka
  * Date modified:
  * Last modified by: Francis Ofougwuka
@@ -29,7 +29,7 @@ var objects;
             // check to see if the top of the car 
             // is outside the viewport         
             if (this.x <= value) {
-                play.scores += 5;
+                play.scores += 2;
                 this._reset(this._rightBounds);
             }
         };
